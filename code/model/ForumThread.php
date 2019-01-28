@@ -169,7 +169,7 @@ class ForumThread extends DataObject {
 		if($forum) {
 			$baseLink = $forum->Link();
 			$extra = ($showID) ? '/'.$this->ID : '';
-			return ($action) ? $forum->Link($baseLink . $action . $extra) : $baseLink;
+			return ($action) ? $forum->Link($action . $extra) : $baseLink;
 		} else {
 			user_error("Bad ForumID '$this->ForumID'", E_USER_WARNING);
 		}
