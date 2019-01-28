@@ -1110,7 +1110,7 @@ class Forum_Controller extends Page_Controller {
 	 * @return string URL for the reply action
 	 */
 	function ReplyLink() {
-		return $this->Link() . 'reply/' . $this->urlParams['ID'];
+		return $this->Link('reply/' . $this->urlParams['ID']);
 	}
 
 	/**

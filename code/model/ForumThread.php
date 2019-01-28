@@ -169,7 +169,7 @@ class ForumThread extends DataObject {
 		if($forum) {
 			$baseLink = $forum->Link();
 			$extra = ($showID) ? '/'.$this->ID : '';
-			return ($action) ? $baseLink . $action . $extra : $baseLink;
+			return ($action) ? $forum->Link($baseLink . $action . $extra) : $baseLink;
 		} else {
 			user_error("Bad ForumID '$this->ForumID'", E_USER_WARNING);
 		}
@@ -293,7 +293,7 @@ class ForumThread_Subscription extends DataObject {
 					$email->populateTemplate($member);
 					$email->populateTemplate($post);
 					$email->populateTemplate(array(
-						'UnsubscribeLink' => Director::absoluteBaseURL() . $post->Thread()->Forum()->Link() . '/unsubscribe/' . $post->ID
+						'UnsubscribeLink' => Director::absoluteBaseURL() . $post->Thread()->Forum()->Link('/unsubscribe/' . $post->ID)
 					));
 					$email->send();
 				}
