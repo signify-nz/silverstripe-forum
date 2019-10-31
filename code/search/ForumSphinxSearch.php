@@ -137,7 +137,7 @@ class ForumSphinxSearch implements ForumSearchProvider
         // are decorated with SphinxSearchable.
         foreach (self::$extra_search_classes as $c) {
             if (Object::has_extension($c, 'SphinxSearchable')) {
-                $conf = Object::uninherited_static($c, "sphinx");
+                $conf = SS_Object::uninherited_static($c, "sphinx");
                 if (!$conf) {
                     $conf = array();
                 }
