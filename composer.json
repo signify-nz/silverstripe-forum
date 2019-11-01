@@ -1,5 +1,5 @@
 {
-	"name": "signify-nz/forum",
+	"name": "silverstripe/forum",
 	"description": "Forum module for SilverStripe.",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "forum"],
